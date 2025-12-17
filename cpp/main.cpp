@@ -106,7 +106,6 @@ int main(int ac, char **av)
 
 	srand(time(NULL));
 	wordcount = 12;
-	//firstLetters = "";
 	if (ac > 1) wordcount = atoi(av[1]);
 	if (ac > 2) firstLetters = string(av[2]);
 /*	for(int i=0; i < 10; i++)
