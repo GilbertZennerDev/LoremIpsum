@@ -15,21 +15,25 @@ def genConsonant():
 def genLowerAlpha():
 	return chr(r.randint(97, 97 + 25))
 
-def genWord(length):
-	word = genConsonant() + genVowel() + "".join([genLowerAlpha() for i in range(length - 2)])
+def genWord(firstLetters):
+	length = r.randint(4, 6)
+	firstLetter = genConsonant()
+	if len(firstLetters): firstLetter = r.choice(firstLetters)
+	word = firstLetter + genVowel() + "".join([genLowerAlpha() for i in range(length - 2)])
 	return word.capitalize()
-
-def lorem(wordcount):
-	txt = ""
-	for i in range(wordcount):
-		txt += genWord(r.randint(4, 6)) + " "
-	print(txt)
+	
+def saveOutput(txt):
+	open("src", "w").write(txt)
 
 def	main():
 	av = sys.argv
 	ac = len(av)
-#	for i in range(10):
-#		print(genWord(4))
-	lorem(10)
+	wordcount = 12
+	firstLetters = ""
+	if ac > 1: wordcount = int(av[1])
+	if ac > 2: firstLetters = av[2]
+	txt = " ".join([genWord(firstLetters) for i in range(wordcount)])
+	print(txt)
+	saveOutput(txt)
 
 if __name__ == '__main__': main()
