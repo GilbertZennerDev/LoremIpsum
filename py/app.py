@@ -23,15 +23,16 @@ def genWord(firstLetters):
 	return word.capitalize()
 	
 def saveOutput(txt):
-	open("src", "w").write(txt)
+	open("loremIpsum", "w").write(txt)
 
 def	main():
 	av = sys.argv
 	ac = len(av)
-	wordcount = 12
-	firstLetters = ""
-	if ac > 1: wordcount = int(av[1])
-	if ac > 2: firstLetters = av[2]
+	if ac != 3: print("Usage: python3 app.py wordcount firstletters"); exit();
+	try:
+		wordcount = int(av[1])
+		firstLetters = av[2]
+	except Exception as e: print(e); return ;
 	txt = " ".join([genWord(firstLetters) for i in range(wordcount)])
 	print(txt)
 	saveOutput(txt)
