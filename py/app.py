@@ -13,7 +13,8 @@ def genConsonant():
 	return r.choice(consonants)
 
 def genLowerAlpha():
-	return chr(r.randint(97, 97 + 25))
+	if r.randint(0, 1): return genVowel()
+	return genConsonant()
 
 def genWord(firstLetters):
 	length = r.randint(4, 6)
