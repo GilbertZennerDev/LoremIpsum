@@ -8,6 +8,7 @@ ported across languages and now as a web app.
 - [`java/`](java) — Java class
 - [`py/`](py) — Python CLI
 - [`web/`](web) — Next.js web app (the live, deployed version)
+- [`vscode-extension/`](vscode-extension) — VS Code extension: insert placeholder text via the Command Palette
 
 ## Algorithm
 
