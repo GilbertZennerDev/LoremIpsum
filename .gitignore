@@ -1,1 +1,8 @@
-src
+/cpp/LoremIpsum
+/java/*.class
+
+# never commit agent tooling
+.claude/
+CLAUDE.md
+AGENTS.md
+.lovable/

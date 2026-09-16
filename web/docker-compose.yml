@@ -1,0 +1,15 @@
+services:
+  lorem-ipsum:
+    build: .
+    image: lorem-ipsum-web:latest
+    container_name: lorem-ipsum-web
+    restart: unless-stopped
+    environment:
+      - HOSTNAME=0.0.0.0
+      - PORT=3000
+    networks:
+      - feierblum_default
+
+networks:
+  feierblum_default:
+    external: true
