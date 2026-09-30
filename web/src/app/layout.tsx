@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -25,6 +26,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-50">
         {children}
+        <Script src="https://umami.workflowsolved.com/script.js" data-website-id="c795a90f-74de-45db-9032-aa84bc7245e2" strategy="afterInteractive" />
+        <Script src="https://umami.workflowsolved.com/recorder.js" data-website-id="c795a90f-74de-45db-9032-aa84bc7245e2" strategy="afterInteractive" />
       </body>
     </html>
   );
