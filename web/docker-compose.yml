@@ -8,8 +8,8 @@ services:
       - HOSTNAME=0.0.0.0
       - PORT=3000
     networks:
-      - feierblum_default
+      - edge
 
 networks:
-  feierblum_default:
+  edge:
     external: true

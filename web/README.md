@@ -22,6 +22,6 @@ Standard Docker + shared Caddy setup:
 
 Builds the image locally, ships it to the server via `docker save | ssh | docker load`,
 then `git pull && docker compose up -d --force-recreate` on `/opt/lorem-ipsum`.
-The service joins the shared `feierblum_default` network and is exposed at
+The service joins the shared `edge` network and is exposed at
 `lorem-ipsum.workflowsolved.com` via the shared Caddy reverse proxy — no port
 is published directly.
